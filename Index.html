@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Min Gjøremålsliste</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Min Gjøremålsliste</h1>
+
+        <div class="input-seksjon">
+            <div class="tekst-input-med-format">
+                <div id="nyOppgaveInput" contenteditable="true" class="editable-input" 
+                     role="textbox" aria-multiline="false" data-placeholder="Skriv inn en ny oppgave..."></div>
+                <button type="button" id="fetKnapp" class="format-knapp" title="Gjør tekst fet (Ctrl+B)"><b>B</b></button>
+            </div>
+            <select id="kategoriVelger">
+                <option value="Felles">Felles</option>
+                <option value="Brygga">Brygga</option>
+                <option value="Markens">Markens</option>
+            </select>
+            <select id="typeVelger">
+                <option value="Åpne">Åpne</option>
+                <option value="Stenge" selected>Stenge</option>
+            </select>
+            <button id="leggTilKnapp">Legg til</button>
+        </div>
+
+        <div class="visnings-filter-seksjon">
+            <div class="filter-dropdown-gruppe">
+                <label for="typeFilterVelger">Type:</label>
+                <select id="typeFilterVelger" class="type-filter-dropdown">
+                    <option value="Åpne">Åpne</option>
+                    <option value="Stenge" selected>Stenge</option> 
+                    <option value="begge">Alle Typer</option> 
+                </select>
+            </div>
+            <div class="filter-dropdown-gruppe">
+                <label for="visningsFilter">Sted:</label> 
+                <select id="visningsFilter">
+                    <option value="brygga_kontekst" selected>Brygga</option>
+                    <option value="markens_kontekst">Markens</option>
+                    <option value="alle">Vis Alle</option>
+                </select>
+            </div>
+            <button id="avhukAlleKnapp" title="Avhuk alle oppgaver">Avhuk alle</button>
+        </div>
+
+        <div id="oppgaveTeller" class="oppgave-teller">0/0</div>
+
+        <ul id="oppgaveListe">
+            </ul>
+    </div>
+    <script src="Script.js"></script>
+</body>
+</html>
